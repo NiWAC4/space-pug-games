@@ -55,6 +55,9 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 .scroll-rail span { position: absolute; right: 1.5rem; color: #dfeefe; opacity: 0; text-transform: uppercase; letter-spacing: .15em; font-size: .62rem; transition: opacity .2s; }
 .scroll-rail a:hover span, .scroll-rail a:focus-visible span { opacity: 1; }
 .variant-secondary .hero { background: #020814; }
+.variant-secondary .scene-image { z-index: 0; }
+.variant-secondary .scene::after { z-index: 1; background: linear-gradient(90deg, rgba(2, 7, 16, .76), rgba(2, 7, 16, .22) 58%, rgba(2, 7, 16, .34)); }
+.variant-secondary .hero::after { z-index: 1; background: radial-gradient(ellipse at 50% 42%, transparent 0 18%, rgba(2, 7, 16, .16) 62%, rgba(2, 7, 16, .62) 100%); }
 .variant-secondary .copy { background: linear-gradient(90deg, rgba(3, 8, 18, .78), rgba(3, 8, 18, .34), transparent); padding: 2rem 2rem 2rem 0; }
 .variant-primary { background: #07101a url('/designs/primary/mockup-textless-no-rail.png') center var(--primary-parallax, 0px) / 100% auto no-repeat; }
 .variant-primary .scene { min-height: 0; background: transparent; }

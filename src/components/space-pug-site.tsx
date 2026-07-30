@@ -20,10 +20,10 @@ const sections: Array<{ id: SectionId; label: string }> = [
 ];
 
 const secondaryMedia: Record<SectionId, string> = {
-  about: "/designs/secondary/about.png",
-  founder: "/designs/secondary/founder.png",
-  projects: "/designs/secondary/projects.png",
-  contact: "/designs/secondary/contact.png",
+  about: "/designs/secondary/about-clean.png",
+  founder: "/designs/secondary/founder-clean.png",
+  projects: "/designs/secondary/projects-clean.png",
+  contact: "/designs/secondary/contact-clean.png",
 };
 
 export function SpacePugSite({ variant }: { variant: Variant }) {
@@ -57,11 +57,11 @@ export function SpacePugSite({ variant }: { variant: Variant }) {
   return <main className={classes}>
     <ScrollRail active={active} />
     <section id="hero" className="hero scene is-revealed">
-      {variant === "secondary" && <Image src="/designs/secondary/hero.png" alt="Space Pug Games planet horizon" fill priority className="scene-image" />}
+      {variant === "secondary" && <Image src="/designs/secondary/hero-clean.png" alt="Space Pug Games planet horizon" fill priority className="scene-image" />}
       <div className="hero-content"><div className="logo-shell"><Image src="/brand/space-pug-games-transparent.png" alt="Space Pug Games" width={1200} height={854} priority className="brand-logo" /></div><h1 className="hero-claim">Indie Games with Heart and Bite</h1></div>
     </section>
-    <section id="about" className={`content-section scene ${revealed.includes("about") ? "is-revealed" : ""} ${active === "about" ? "is-active" : ""}`}><SceneImage variant={variant} id="about" /><SmokeCanvas /><div className="copy about-copy"><p className="eyebrow">About Space Pug Games</p><TechText text={copy.about} /></div></section>
-    <section id="founder" className={`content-section scene ${revealed.includes("founder") ? "is-revealed" : ""} ${active === "founder" ? "is-active" : ""}`}><SceneImage variant={variant} id="founder" /><div className="founder-galaxy" aria-hidden="true" /><div className="founder-galaxy-arms" aria-hidden="true" /><div className="founder-stars" aria-hidden="true"><i /><i /><i /><i /><i /></div><div className="copy founder-copy"><p className="eyebrow">Founder</p><TechText text={copy.founder} /></div></section>
+    <section id="about" className={`content-section scene ${revealed.includes("about") ? "is-revealed" : ""} ${active === "about" ? "is-active" : ""}`}><SceneImage variant={variant} id="about" />{variant === "primary" && <SmokeCanvas />}<div className="copy about-copy"><p className="eyebrow">About Space Pug Games</p><TechText text={copy.about} /></div></section>
+    <section id="founder" className={`content-section scene ${revealed.includes("founder") ? "is-revealed" : ""} ${active === "founder" ? "is-active" : ""}`}><SceneImage variant={variant} id="founder" />{variant === "primary" && <><div className="founder-galaxy" aria-hidden="true" /><div className="founder-galaxy-arms" aria-hidden="true" /><div className="founder-stars" aria-hidden="true"><i /><i /><i /><i /><i /></div></>}<div className="copy founder-copy"><p className="eyebrow">Founder</p><TechText text={copy.founder} /></div></section>
     <section id="projects" className={`content-section scene ${revealed.includes("projects") ? "is-revealed" : ""} ${active === "projects" ? "is-active" : ""}`}><SceneImage variant={variant} id="projects" /><div className="copy projects-copy tech-reveal"><p className="eyebrow">Projects</p><h2>Will follow soon.</h2><span>In development</span></div></section>
     <section id="contact" className={`content-section scene ${revealed.includes("contact") ? "is-revealed" : ""} ${active === "contact" ? "is-active" : ""}`}><SceneImage variant={variant} id="contact" /><div className="copy contact-copy"><div className="tech-reveal"><p className="eyebrow">Get in touch</p><h2>Send your message into the void, we listen.</h2></div><a className="mail-action tech-mail-reveal" href="mailto:nils@spacepuggames.de" aria-label="Send mail to Space Pug Games"><span aria-hidden="true">✉</span><b>Send mail</b></a></div></section>
     <footer><div className="logo-shell footer-logo"><Image src="/brand/space-pug-games-transparent.png" alt="Space Pug Games" width={1200} height={854} /></div><a href="/imprint">Imprint</a></footer>
