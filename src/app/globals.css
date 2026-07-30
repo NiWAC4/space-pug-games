@@ -92,4 +92,36 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 @keyframes horizon-arrival { 0% { opacity: 0; transform: scaleX(.35); } 28% { opacity: .9; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } .smoke-canvas, .founder-galaxy, .founder-galaxy-arms, .founder-stars { display: none; } }
 @media (min-width: 761px) { .hero-claim { max-width: none; white-space: nowrap; } }
-@media (max-width: 760px) { .scene { min-height: 46rem; align-items: flex-end; } .hero { min-height: 100dvh; align-items: flex-start; background-size: auto 100%; } .hero-content { width: calc(100% - 3rem); transform: none; margin-top: 9rem; } .hero h1 { font-size: clamp(2.5rem, 12vw, 4.5rem); } .copy, .founder-copy, .projects-copy, .contact-copy { width: auto; margin: 0; padding: 2rem 1.5rem 3rem; } .projects-copy { margin-right: 0; } .content-section { align-items: flex-end; } .copy p:not(.eyebrow) { font-size: 1rem; } .contact-copy { flex-direction: column; align-items: flex-start; gap: 1.5rem; } .scroll-rail { right: .8rem; top: 18vh; bottom: 18vh; } .scroll-rail span { display: none; } footer { min-height: 11rem; flex-direction: column; gap: 1rem; } .variant-primary .scene { min-height: 0; } .variant-primary .hero { min-height: 0; background: transparent; } .variant-primary .hero-content { transform: translateY(-10vw); margin-top: 0; } .variant-primary .copy { padding: .5rem; font-size: .6rem; } }
+@media (max-width: 760px) {
+  .scene { min-height: 46rem; align-items: flex-end; }
+  .hero { min-height: 100dvh; align-items: flex-start; background-size: auto 100%; }
+  .hero-content { width: calc(100% - 3rem); transform: none; margin-top: 9rem; }
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 4.5rem); }
+  .copy, .founder-copy, .projects-copy, .contact-copy { width: auto; margin: 0; padding: 2rem 1.5rem 3rem; }
+  .projects-copy { margin-right: 0; }
+  .content-section { align-items: flex-end; }
+  .copy p:not(.eyebrow) { font-size: 1rem; }
+  .contact-copy { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .scroll-rail { right: .8rem; top: 18vh; bottom: 18vh; }
+  .scroll-rail span { display: none; }
+  footer { min-height: 11rem; flex-direction: column; gap: 1rem; }
+
+  .variant-primary { background: #050a12; }
+  .variant-primary .scene { min-height: 34rem; height: auto; background: #050a12 center / cover no-repeat; }
+  .variant-primary .scene::after { display: block; z-index: 1; background: linear-gradient(0deg, rgba(3, 8, 15, .82), rgba(3, 8, 15, .08) 70%); }
+  .variant-primary .primary-art { display: none; }
+  .variant-primary .hero { min-height: 100dvh; height: auto; background: url('/designs/primary/mobile/hero.png') center / cover no-repeat; }
+  .variant-primary #about { min-height: 37rem; background-image: url('/designs/primary/mobile/about.png'); }
+  .variant-primary #founder { min-height: 39rem; background-image: url('/designs/primary/mobile/founder.png'); }
+  .variant-primary #projects { min-height: 32rem; background-image: url('/designs/primary/mobile/projects.png'); }
+  .variant-primary #contact { min-height: 34rem; background-image: url('/designs/primary/mobile/contact.png'); }
+  .variant-primary .hero-content { width: calc(100% - 2.5rem); margin-top: 2rem; transform: none; }
+  .variant-primary .logo-shell { width: min(22rem, 88vw); height: clamp(4.6rem, 21vw, 6.5rem); }
+  .variant-primary .hero h1 { max-width: 22rem; margin-top: 1.15rem; font-size: clamp(2.15rem, 10.5vw, 3.55rem); line-height: .98; }
+  .variant-primary .copy, .variant-primary .founder-copy, .variant-primary .projects-copy, .variant-primary .contact-copy { width: calc(100% - 2.5rem); margin: 0 1.25rem 1.25rem; padding: 1.35rem; background: linear-gradient(90deg, rgba(2, 7, 13, .92), rgba(2, 7, 13, .66)); }
+  .variant-primary .copy p:not(.eyebrow) { font-size: 1rem; line-height: 1.55; }
+  .variant-primary .founder-copy { --copy-offset-y: 0; }
+  .variant-primary .contact-copy { align-items: flex-start; }
+  .variant-primary footer { min-height: 13rem; background: #050a12 url('/designs/primary/mobile/footer.png') center / cover no-repeat; }
+  .variant-primary .footer-logo { width: min(11rem, 55vw); height: 3.8rem; }
+}
