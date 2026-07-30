@@ -1,0 +1,5 @@
+import Link from "next/link";
+
+export default function ImprintPage() {
+  return <main className="imprint"><Link href="/" className="back">← Back to Space Pug Games</Link><h1>Imprint</h1><section><h2>Information pursuant to § 5 TMG</h2><p>Nils Wachter<br />Feldbergstraße 26<br />68163 Mannheim</p><h2>Contact</h2><p>Phone: 01605521838<br />Email: imp@spacepuggames.de</p></section><section><h2>Liability for content</h2><p>As a service provider, we are responsible for our own content on these pages under general law. Obligations to remove or block the use of information under general law remain unaffected.</p><h2>Liability for links</h2><p>Our website contains links to external third-party websites over whose content we have no control. The respective provider or operator is always responsible for the content of linked pages.</p><h2>Copyright</h2><p>The content and works created by the site operator are subject to German copyright law. Third-party content is identified where applicable.</p></section></main>;
+}

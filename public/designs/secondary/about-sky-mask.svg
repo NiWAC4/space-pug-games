@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+  <rect width="1600" height="900" fill="white"/>
+  <!-- Preserve the monolith silhouettes in the secondary About illustration. -->
+  <path fill="white" fill-opacity="0" d="M720 900 L720 640 770 600 805 435 846 390 875 282 914 205 964 110 1015 76 1070 42 1118 28 1162 67 1193 148 1181 221 1139 268 1110 383 1070 456 1088 531 1140 550 1185 512 1212 478 1236 520 1260 555 1280 610 1307 460 1334 382 1361 261 1392 202 1423 216 1444 310 1457 418 1452 520 1485 553 1514 505 1545 478 1575 522 1600 548 L1600 900 Z"/>
+</svg>

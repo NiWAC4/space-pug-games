@@ -1,0 +1,47 @@
+VISION.md
+
+# Space Pug Games Website
+
+Goal:
+Create a premium cinematic one-page website.
+
+Design language:
+- AAA quality
+- Atmospheric
+- Story driven
+- Space
+- Modern
+- Premium
+- Minimal UI
+- Huge cinematic imagery
+
+Scrolling
+The user should feel like travelling through space.
+
+Each section changes the scenery.
+
+Hero
+Planet horizon
+Logo
+Headline
+
+About
+Nebula
+
+Founder
+Galaxy
+
+Projects
+(placeholder)
+
+Contact
+Dark planet
+
+Effects
+- Light sweep over logo
+- Slight animated gradients
+- Glassmorphism
+- Smooth scrolling
+- Mouse glow
+- Framer Motion
+- Parallax
