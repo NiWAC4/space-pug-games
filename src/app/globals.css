@@ -58,7 +58,18 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 .variant-secondary .scene-image { z-index: 0; }
 .variant-secondary .scene::after { z-index: 1; background: linear-gradient(90deg, rgba(2, 7, 16, .76), rgba(2, 7, 16, .22) 58%, rgba(2, 7, 16, .34)); }
 .variant-secondary .hero::after { z-index: 1; background: radial-gradient(ellipse at 50% 42%, transparent 0 18%, rgba(2, 7, 16, .16) 62%, rgba(2, 7, 16, .62) 100%); }
-.variant-secondary .copy { background: linear-gradient(90deg, rgba(3, 8, 18, .78), rgba(3, 8, 18, .34), transparent); padding: 2rem 2rem 2rem 0; }
+.variant-secondary .hero-content { position: absolute; top: 43%; left: 50%; width: min(76rem, calc(100% - 8rem)); transform: translate(-50%, -50%); }
+.variant-secondary .hero h1 { max-width: none; white-space: nowrap; font-size: clamp(2.8rem, 4.6vw, 5.8rem); }
+.variant-secondary .copy { width: min(38rem, 44%); background: linear-gradient(90deg, rgba(3, 8, 18, .82), rgba(3, 8, 18, .38), transparent); padding: 2.35rem 2.65rem 2.35rem 0; }
+.variant-secondary .copy p:not(.eyebrow) { font-size: clamp(1.08rem, 1.55vw, 1.42rem); line-height: 1.62; }
+.variant-secondary .eyebrow { margin-bottom: 1.7rem; font-size: clamp(.9rem, 1.25vw, 1.18rem); }
+.variant-secondary .copy h2 { font-size: clamp(2.2rem, 4.35vw, 4.75rem); }
+.variant-secondary .projects-copy span { font-size: .88rem; }
+.variant-secondary .scene::before { top: -8px; right: 0; bottom: auto; left: 0; height: clamp(8px, 1vw, 18px); background: linear-gradient(90deg, transparent 0%, rgba(99, 212, 255, .08) 14%, rgba(220, 250, 255, .95) 50%, rgba(99, 212, 255, .08) 86%, transparent 100%); box-shadow: 0 0 .7rem rgba(102, 222, 255, .82), 0 0 2.5rem rgba(54, 151, 230, .48); }
+.variant-secondary .scene.is-active::before { animation: horizon-flight .82s cubic-bezier(.18,.74,.18,1) both; }
+.variant-secondary .scene.is-active .scene-image { animation: horizon-image-arrival .9s cubic-bezier(.16,.82,.24,1) both; will-change: transform; }
+.variant-secondary .scene.is-active .copy { animation: horizon-copy-arrival .58s cubic-bezier(.22,.75,.26,1) both; will-change: transform, opacity; }
+.variant-secondary .is-active .tech-copy, .variant-secondary .is-active .tech-reveal, .variant-secondary .is-active .tech-mail-reveal { animation: none; }
 .variant-primary { background: #07101a url('/designs/primary/mockup-textless-no-rail.png') center var(--primary-parallax, 0px) / 100% auto no-repeat; }
 .variant-primary .scene { min-height: 0; background: transparent; }
 .variant-primary .scene::after { display: none; }
@@ -90,7 +101,10 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 @keyframes star-flash { 0%, 64%, 100% { opacity: 0; transform: scale(.3); } 69% { opacity: .95; transform: scale(1.45); } 75% { opacity: .15; transform: scale(.6); } }
 @keyframes text-transmission-lock { 0% { opacity: 0; filter: blur(3px); transform: translateX(-.35rem) skewX(-4deg); text-shadow: -2px 0 rgba(255, 86, 115, .58), 2px 0 rgba(81, 223, 255, .68); } 38% { opacity: .72; transform: translateX(.12rem) skewX(2deg); } 68% { opacity: .86; filter: blur(.65px); transform: translateX(-.04rem); } 100% { opacity: 1; filter: blur(0); transform: translateX(0); text-shadow: inherit; } }
 @keyframes horizon-arrival { 0% { opacity: 0; transform: scaleX(.35); } 28% { opacity: .9; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(1); } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } .smoke-canvas, .founder-galaxy, .founder-galaxy-arms, .founder-stars { display: none; } }
+@keyframes horizon-flight { 0% { opacity: 0; transform: scaleX(.18) translateY(-.3rem); filter: blur(7px); } 26% { opacity: .92; transform: scaleX(1.04) translateY(0); filter: blur(1px); } 58% { opacity: .74; transform: scaleX(1) translateY(.1rem); filter: blur(0); } 100% { opacity: 0; transform: scaleX(.94) translateY(.35rem); filter: blur(4px); } }
+@keyframes horizon-image-arrival { 0% { transform: scale(1.055) translate3d(0, 1.2%, 0); } 62% { transform: scale(1.025) translate3d(0, .25%, 0); } 100% { transform: scale(1.01) translate3d(0, 0, 0); } }
+@keyframes horizon-copy-arrival { 0% { opacity: .28; transform: translate3d(-.45rem, .8rem, 0) skewX(-.6deg); filter: blur(1.5px); } 38% { opacity: .9; transform: translate3d(.12rem, -.06rem, 0) skewX(.18deg); filter: blur(.25px); } 100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } .smoke-canvas, .founder-galaxy, .founder-galaxy-arms, .founder-stars, .variant-secondary .scene::before { display: none; } }
 @media (min-width: 761px) { .hero-claim { max-width: none; white-space: nowrap; } }
 @media (max-width: 760px) {
   .scene { min-height: 46rem; align-items: flex-end; }
@@ -124,4 +138,13 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
   .variant-primary .contact-copy { align-items: flex-start; }
   .variant-primary footer { min-height: 13rem; background: #050a12 url('/designs/primary/mobile/footer.png') center / cover no-repeat; }
   .variant-primary .footer-logo { width: min(11rem, 55vw); height: 3.8rem; }
+
+  .variant-secondary .hero-content { top: clamp(3.4rem, 12vh, 6rem); width: calc(100% - 2rem); transform: translateX(-50%); }
+  .variant-secondary .hero h1 { max-width: 23rem; white-space: normal; font-size: clamp(2.25rem, 10vw, 3.25rem); }
+  .variant-secondary .copy, .variant-secondary .founder-copy, .variant-secondary .projects-copy, .variant-secondary .contact-copy { width: min(calc(100% - 2rem), 34rem); margin: 0 auto 1.25rem; padding: 1.45rem 1.35rem; background: linear-gradient(90deg, rgba(2, 7, 15, .92), rgba(2, 7, 15, .72)); }
+  .variant-secondary .copy p:not(.eyebrow) { font-size: clamp(1.05rem, 4.5vw, 1.18rem); line-height: 1.58; }
+  .variant-secondary .eyebrow { margin-bottom: 1rem; font-size: .82rem; }
+  .variant-secondary .copy h2 { font-size: clamp(2.05rem, 9.5vw, 3.1rem); }
+  .variant-secondary .contact-copy { align-items: center; text-align: center; }
+  .variant-secondary .contact-copy .tech-reveal { width: 100%; }
 }
