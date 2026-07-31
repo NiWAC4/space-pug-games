@@ -65,9 +65,7 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 .variant-secondary .eyebrow { margin-bottom: 1.7rem; font-size: clamp(.9rem, 1.25vw, 1.18rem); }
 .variant-secondary .copy h2 { font-size: clamp(2.2rem, 4.35vw, 4.75rem); }
 .variant-secondary .projects-copy span { font-size: .88rem; }
-.variant-secondary .scene::before { top: -8px; right: 0; bottom: auto; left: 0; height: clamp(8px, 1vw, 18px); background: linear-gradient(90deg, transparent 0%, rgba(99, 212, 255, .08) 14%, rgba(220, 250, 255, .95) 50%, rgba(99, 212, 255, .08) 86%, transparent 100%); box-shadow: 0 0 .7rem rgba(102, 222, 255, .82), 0 0 2.5rem rgba(54, 151, 230, .48); }
-.variant-secondary .scene.is-active::before { animation: horizon-flight .82s cubic-bezier(.18,.74,.18,1) both; }
-.variant-secondary .scene.is-active .scene-image { animation: horizon-image-arrival .9s cubic-bezier(.16,.82,.24,1) both; will-change: transform; }
+.variant-secondary .scene::before { display: none; }
 .variant-secondary .scene.is-active .copy { animation: horizon-copy-arrival .58s cubic-bezier(.22,.75,.26,1) both; will-change: transform, opacity; }
 .variant-secondary .is-active .tech-copy, .variant-secondary .is-active .tech-reveal, .variant-secondary .is-active .tech-mail-reveal { animation: none; }
 .variant-primary { background: #07101a url('/designs/primary/mockup-textless-no-rail.png') center var(--primary-parallax, 0px) / 100% auto no-repeat; }
@@ -101,8 +99,6 @@ footer a { color: rgba(237,240,247,.75); text-transform: uppercase; letter-spaci
 @keyframes star-flash { 0%, 64%, 100% { opacity: 0; transform: scale(.3); } 69% { opacity: .95; transform: scale(1.45); } 75% { opacity: .15; transform: scale(.6); } }
 @keyframes text-transmission-lock { 0% { opacity: 0; filter: blur(3px); transform: translateX(-.35rem) skewX(-4deg); text-shadow: -2px 0 rgba(255, 86, 115, .58), 2px 0 rgba(81, 223, 255, .68); } 38% { opacity: .72; transform: translateX(.12rem) skewX(2deg); } 68% { opacity: .86; filter: blur(.65px); transform: translateX(-.04rem); } 100% { opacity: 1; filter: blur(0); transform: translateX(0); text-shadow: inherit; } }
 @keyframes horizon-arrival { 0% { opacity: 0; transform: scaleX(.35); } 28% { opacity: .9; transform: scaleX(1); } 100% { opacity: 0; transform: scaleX(1); } }
-@keyframes horizon-flight { 0% { opacity: 0; transform: scaleX(.18) translateY(-.3rem); filter: blur(7px); } 26% { opacity: .92; transform: scaleX(1.04) translateY(0); filter: blur(1px); } 58% { opacity: .74; transform: scaleX(1) translateY(.1rem); filter: blur(0); } 100% { opacity: 0; transform: scaleX(.94) translateY(.35rem); filter: blur(4px); } }
-@keyframes horizon-image-arrival { 0% { transform: scale(1.055) translate3d(0, 1.2%, 0); } 62% { transform: scale(1.025) translate3d(0, .25%, 0); } 100% { transform: scale(1.01) translate3d(0, 0, 0); } }
 @keyframes horizon-copy-arrival { 0% { opacity: .28; transform: translate3d(-.45rem, .8rem, 0) skewX(-.6deg); filter: blur(1.5px); } 38% { opacity: .9; transform: translate3d(.12rem, -.06rem, 0) skewX(.18deg); filter: blur(.25px); } 100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } .smoke-canvas, .founder-galaxy, .founder-galaxy-arms, .founder-stars, .variant-secondary .scene::before { display: none; } }
 @media (min-width: 761px) { .hero-claim { max-width: none; white-space: nowrap; } }
